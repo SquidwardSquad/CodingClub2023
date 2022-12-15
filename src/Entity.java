@@ -31,7 +31,7 @@ public abstract class Entity implements Drawable, Collidable{
         this.y = y;
     }
 
-    //Must Be overridden in child class
+    //Must be overridden in child class
     public abstract void move();
 
     @Override
