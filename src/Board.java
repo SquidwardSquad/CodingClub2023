@@ -32,10 +32,13 @@ public class Board extends JPanel implements Runnable, KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D)g;
+
+        /*
         RenderingHints rh = new RenderingHints(
                 RenderingHints.KEY_INTERPOLATION,
                 RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
         g2d.setRenderingHints(rh);
+         */
 
         //Render items here
         tile1.draw(g2d);
