@@ -14,22 +14,24 @@ public class Player extends Entity{
         //get user input
         //update sprite
         //update collisionbox
-        if (Board.sKey) {
-            y += SPEED;
-            collisionBox.y = y;
-        }
-        if (Board.wKey) {
+        if (GamePanel.keyHandler.wKey) {
             y -= SPEED;
             collisionBox.y = y;
         }
-        if (Board.aKey) {
+        if (GamePanel.keyHandler.aKey) {
             x -= SPEED;
             collisionBox.x = x;
         }
-        if (Board.dKey) {
+        if (GamePanel.keyHandler.sKey) {
+            y += SPEED;
+            collisionBox.y = y;
+        }
+        if (GamePanel.keyHandler.dKey) {
             x += SPEED;
             collisionBox.x = x;
         }
+
+
     }
 
 
