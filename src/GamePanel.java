@@ -54,7 +54,7 @@ public class GamePanel extends JPanel implements Runnable{
             endFrameTime = System.nanoTime();
             frameLength = endFrameTime - startFrameTime;
             remainingFrameTime = frameInterval - frameLength;
-            System.out.println(remainingFrameTime);
+            //System.out.println(remainingFrameTime);
             if (remainingFrameTime > 0) {
                 try {
                     Thread.sleep(remainingFrameTime/1000000);
