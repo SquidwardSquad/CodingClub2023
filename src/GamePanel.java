@@ -13,10 +13,9 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
 
     private Entity player = new Player(0, 0);
-    private Tile tile1 = new Tile(32, 32, TileType.GROUND);
-    private Tile tile2 = new Tile(64, 32, TileType.GRASS);
-    private Tile tile3 = new Tile(96, 32, TileType.WALL);
-    private Tile tile4 = new Tile(128, 32, TileType.BLANK);
+    private Tile[] tiles = new Tile[18*18];
+
+  
 
     //TESTING COLLISION OBJECTS
     private Rectangle testCollision = new Rectangle(100, 100, 64, 64);
@@ -27,6 +26,11 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(keyHandler);
         this.setFocusable(true);
+
+      for (int  i = 0; i < 18; i++) {
+        for (int j = 0; j < 18; j++)
+        tiles[i * 18 + j] = new Tile(j * 32, i * 32, TileType.GRASS);
+      }
     }
 
     public void startGameThread() {
@@ -80,10 +84,10 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2d = (Graphics2D)g;
 
         //Render items here
-        tile1.draw(g2d);
-        tile2.draw(g2d);
-        tile3.draw(g2d);
-        tile4.draw(g2d);
+
+      for (int  i = 0; i < 324; i++) {
+        tiles[i].draw(g2d);
+      }
 
         player.draw(g2d);
 

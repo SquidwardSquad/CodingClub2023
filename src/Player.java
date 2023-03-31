@@ -6,7 +6,7 @@ public class Player extends Entity{
 
 
     public Player(int x, int y) {
-        super(x, y, 32, 32, "assets/player.png");
+        super(x, y, 32, 32, "assets/matt.png");
     }
 
     @Override
